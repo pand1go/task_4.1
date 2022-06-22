@@ -1,3 +1,28 @@
+<style>
+    table {
+        border-collapse: collapse;
+        border: 2px solid grey;
+        }
+    th, td {
+        text-align: justify;
+        padding: 3px;
+        border: 1px solid grey;
+        }
+    body {
+        background: rgb(0,33,55);
+        color: white;
+    }
+    h1 {
+        color: rgb(201,192,187);  
+    }
+    h2 {
+        color: rgb(201,192,187);
+    }
+    h4 {
+        color: white
+    }
+</style>
+
 ### [*>>> к содержанию*](./readme.md)
 ### [*> следующая страница*](./git_status%26git_log.md)
 ### [*предыдущая страница <*](./git_add.md)
@@ -9,7 +34,7 @@
 
 #### Если результат работы команды `git status` недостаточно информативен для вас — вам хочется знать, что конкретно поменялось, а не только какие файлы были изменены — вы можете использовать команду `git diff`. Вы, скорее всего, будете использовать эту команду для получения ответов на два вопроса: что вы изменили, но ещё не проиндексировали, и что вы проиндексировали и собираетесь включить в коммит. Если `git status` отвечает на эти вопросы в самом общем виде, перечисляя имена файлов, `git diff` показывает вам непосредственно добавленные и удалённые строки — патч как он есть.
 #### Допустим, вы снова изменили и проиндексировали файл `README`, а затем изменили файл `CONTRIBUTING.md` без индексирования. Если вы выполните команду `git status`, вы опять увидите что-то вроде:
-```
+<pre>
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -23,9 +48,9 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
     modified:   CONTRIBUTING.md
-```
+</pre>
 #### Чтобы увидеть, что же вы изменили, но пока не проиндексировали, наберите `git diff` без аргументов:
-```
+<pre>
 $ git diff
 diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
 index 8ebb991..643e24f 100644
@@ -41,10 +66,10 @@ index 8ebb991..643e24f 100644
 
  If you are starting to work on a particular area, feel free to submit a PR
  that highlights your work in progress (and note in the PR title that it's
-```
+</pre>
 #### Эта команда сравнивает содержимое вашего рабочего каталога с содержимым индекса. Результат показывает ещё не проиндексированные изменения.
 #### Если вы хотите посмотреть, что вы проиндексировали и что войдёт в следующий коммит, вы можете выполнить `git diff --staged`. Эта команда сравнивает ваши проиндексированные изменения с последним коммитом:
-```
+<pre>
 $ git diff --staged
 diff --git a/README b/README
 new file mode 100644
@@ -53,10 +78,10 @@ index 0000000..03902a1
 +++ b/README
 @@ -0,0 +1 @@
 +My Project
-```
+</pre>
 #### Важно отметить, что `git diff` сама по себе не показывает все изменения сделанные с последнего коммита — только те, что ещё не проиндексированы. Такое поведение может сбивать с толку, так как если вы проиндексируете все свои изменения, то `git diff` ничего не вернёт.
 #### Другой пример: вы проиндексировали файл `CONTRIBUTING.md` и затем изменили его, вы можете использовать `git diff` для просмотра как проиндексированных изменений в этом файле, так и тех, что пока не проиндексированы. Если наше окружение выглядит вот так:
-```
+<pre>
 $ git add CONTRIBUTING.md
 $ echo '# test line' >> CONTRIBUTING.md
 $ git status
@@ -72,9 +97,9 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
     modified:   CONTRIBUTING.md
-```
+</pre>
 #### Используйте `git diff` для просмотра непроиндексированных изменений
-```
+<pre>
 $ git diff
 diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
 index 643e24f..87f08c8 100644
@@ -85,9 +110,9 @@ index 643e24f..87f08c8 100644
 
  See our [projects list](https://github.com/libgit2/libgit2/blob/development/PROJECTS.md).
 +# test line
-```
+</pre>
 #### а так же `git diff --cached` для просмотра проиндексированных изменений (`--staged` и `--cached` синонимы):
-```
+<pre>
 $ git diff --cached
 diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
 index 8ebb991..643e24f 100644
@@ -103,7 +128,7 @@ index 8ebb991..643e24f 100644
 
  If you are starting to work on a particular area, feel free to submit a PR
  that highlights your work in progress (and note in the PR title that it's
-```
+</pre>
 
 <table>
     <tr>

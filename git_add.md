@@ -1,3 +1,19 @@
+<style>
+    body {
+        background: rgb(0,33,55);
+        color: white;
+    }
+    h1 {
+        color: rgb(201,192,187);  
+    }
+    h2 {
+        color: rgb(201,192,187);
+    }
+    h4 {
+        color: white
+    }
+</style>
+
 ### [*>>> к содержанию*](./readme.md)
 ### [*> следующая страница*](./git_diff.md)
 ### [*предыдущая страница <*](./create_git-repository.md)
@@ -9,11 +25,11 @@
 ---
 
 #### Для того чтобы начать отслеживать (добавить под версионный контроль) новый файл, используется команда `git add`. Команда `git add` добавляет изменение из рабочего каталога в раздел проиндексированных файлов. Она сообщает Git, что вы хотите включить изменения в конкретном файле в следующий коммит. Однако на самом деле команда `git add` не оказывает существенного влияния на репозиторий: изменения регистрируются в нем только после выполнения команды `git commit`. Чтобы начать отслеживание файла `README`, вы можете выполнить следующее:
-```
+<pre>
 $ git add README
-```
+</pre>
 #### Если вы снова выполните команду `status`, то увидите, что файл `README` теперь отслеживаемый и добавлен в индекс:
-```
+<pre>
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -21,7 +37,7 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
 
     new file:   README
-```
+</pre>
 #### Вы можете видеть, что файл проиндексирован, так как он находится в секции «Changes to be committed». Если вы выполните коммит в этот момент, то версия файла, существовавшая на момент выполнения вами команды `git add`, будет добавлена в историю снимков состояния. Как вы помните, когда вы ранее выполнили `git init`, затем вы выполнили `git add` (файлы) — это было сделано для того, чтобы добавить файлы в вашем каталоге под версионный контроль. Команда `git add` принимает параметром путь к файлу или каталогу, если это каталог, команда рекурсивно добавляет все файлы из указанного каталога в индекс.
 #### Работа над проектом ведется по стандартной схеме «редактирование — индексирование — коммит». Сначала вы редактируете файлы в рабочем каталоге. Когда вы будете готовы сохранить копию текущего состояния проекта, вы индексируете изменения командой `git add`. Затем вы вызываете команду `git commit`, которая добавляет проиндексированный снимок состояния в историю проекта. Для отмены коммита или проиндексированного снимка состояния используется команда `git reset`.
 
@@ -31,17 +47,17 @@ Changes to be committed:
 
 ---
 
-```
-git add <file>
-```
+<pre>
+git add &ltfile>
+</pre>
 #### Проиндексировать все изменения в файле `<file>` для следующего коммита.
-```
-git add <directory>
-```
+<pre>
+git add &ltdirectory>
+</pre>
 Проиндексировать все изменения в каталоге `<directory>` для следующего коммита.
-```
+<pre>
 git add -p
-```
+</pre>
 #### Начать интерактивный сеанс индексирования, во время которого вы сможете выбрать части файла, которые будут добавлены в следующий коммит. Команда представит фрагмент изменений и предложит вам ввести команду. Введите 'y', чтобы проиндексировать фрагмент; 'n', чтобы игнорировать фрагмент; 's', чтобы разбить его на более мелкие фрагменты; 'e', чтобы вручную отредактировать фрагмент; 'q', чтобы завершить работу с командой.
 
 ---
@@ -51,63 +67,63 @@ git add -p
 ---
 
 #### Если вы измените отслеживаемый файл `CONTRIBUTING.md` и после этого снова выполните команду `git status`, то результат будет примерно следующим:
-```
+<pre>
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+  (use "git reset HEAD &ltfile>..." to unstage)
 
     new file:   README
 
 Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git add &ltfile>..." to update what will be committed)
+  (use "git checkout -- &ltfile>..." to discard changes in working directory)
 
     modified:   CONTRIBUTING.md
-```
+</pre>
 #### Файл `CONTRIBUTING.md` находится в секции «Changes not staged for commit» — это означает, что отслеживаемый файл был изменён в рабочем каталоге, но пока не проиндексирован. Чтобы проиндексировать его, необходимо выполнить команду `git add`. Это команда используется для добавления под версионный контроль новых файлов, для индексации изменений, а также для других целей, например для указания файлов с исправленным конфликтом слияния. Вам может быть понятнее, если вы будете думать об этом как «добавить этот контент в следующий коммит», а не как «добавить этот файл в проект». Выполним `git add`, чтобы проиндексировать `CONTRIBUTING.md`, а затем снова выполним `git status`:
-```
+<pre>
 $ git add CONTRIBUTING.md
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+  (use "git reset HEAD &ltfile>..." to unstage)
 
     new file:   README
     modified:   CONTRIBUTING.md
-```
+</pre>
 #### Теперь оба файла проиндексированы и войдут в следующий коммит. В этот момент вы, предположим, вспомнили одно небольшое изменение, которое вы хотите сделать в `CONTRIBUTING.md` до коммита. Вы открываете файл, вносите и сохраняете необходимые изменения и вроде бы готовы к коммиту. Но давайте-ка ещё раз выполним `git status`:
-```
+<pre>
 $ vim CONTRIBUTING.md
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+  (use "git reset HEAD &ltfile>..." to unstage)
 
     new file:   README
     modified:   CONTRIBUTING.md
 
 Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git add &ltfile>..." to update what will be committed)
+  (use "git checkout -- &ltfile>..." to discard changes in working directory)
 
     modified:   CONTRIBUTING.md
-```
+</pre>
 #### Теперь `CONTRIBUTING.md` отображается как проиндексированный и непроиндексированный одновременно. Как такое возможно? Такая ситуация наглядно демонстрирует, что Git индексирует файл в точности в том состоянии, в котором он находился, когда вы выполнили команду `git add`. Если вы выполните коммит сейчас, то файл `CONTRIBUTING.md` попадёт в коммит в том состоянии, в котором он находился, когда вы последний раз выполняли команду `git add`, а не в том, в котором он находится в вашем рабочем каталоге в момент выполнения `git commit`. Если вы изменили файл после выполнения `git add`, вам придётся снова выполнить `git add`, чтобы проиндексировать последнюю версию файла:
-```
+<pre>
 $ git add CONTRIBUTING.md
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+  (use "git reset HEAD &ltfile>..." to unstage)
 
     new file:   README
     modified:   CONTRIBUTING.md
-```
+</pre>
 
 ---
 

@@ -1,3 +1,30 @@
+<style>
+    body {
+        background: rgb(171,205,239);
+        color: white;
+    }
+    h1 {
+        color: white;  
+    }
+    h2 {
+        color: white;
+    }
+    a:link {
+        color: white; 
+    }
+    a:visited {
+        color: red;
+    }
+    a:hover {
+        color: black; 
+        border-bottom: .07em solid;
+    }
+    a:active {
+        color: black; 
+        border-bottom: 1px dashed;
+    }
+</style>
+
 # **Инструкция по работе с GIT** 
 
 LICENSE: [MIT](./license.md)
