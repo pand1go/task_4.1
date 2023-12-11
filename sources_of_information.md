@@ -1,14 +1,3 @@
-<style>
-    body {
-        background: rgb(0,33,55);
-        color: white;
-    }
-    h2 {
-        color: rgb(201,192,187);
-    }
-</style>
-
-
 ## **Список источников информации**
 
 ---

@@ -1,28 +1,3 @@
-<style>
-    table {
-        border-collapse: collapse;
-        border: 2px solid grey;
-        }
-    th, td {
-        text-align: justify;
-        padding: 3px;
-        border: 1px solid grey;
-        }
-    body {
-        background: rgb(0,33,55);
-        color: white;
-    }
-    h1 {
-        color: rgb(201,192,187);  
-    }
-    h2 {
-        color: rgb(201,192,187);
-    }
-    h4 {
-        color: white
-    }
-</style>
-
 ### [*>>> к содержанию*](./readme.md)
 ### [*> следующая страница*](./git_commit.md)
 ### [*предыдущая страница <*](./git_diff.md)

@@ -1,19 +1,3 @@
-<style>
-    body {
-        background: rgb(0,33,55);
-        color: white;
-    }
-    h1 {
-        color: rgb(201,192,187);  
-    }
-    h2 {
-        color: rgb(201,192,187);
-    }
-    h4 {
-        color: white
-    }
-</style>
-
 ### [*>>> к содержанию*](./readme.md)
 ### [*> следующая страница*](./setting.md)
 ### [*предыдущая страница <*](./control_versions.md) 
